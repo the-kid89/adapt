@@ -31,10 +31,10 @@ def find_next_tag(tags, end_index=0):
 def choose_1_from_each(lists):
     if len(lists) == 0:
         yield []
-    else:
-        for el in lists[0]:
-            for next_list in choose_1_from_each(lists[1:]):
-                yield [el] + next_list
+        return
+    for el in lists[0]:
+        for next_list in choose_1_from_each(lists[1:]):
+            yield [el] + next_list
 
 
 def resolve_one_of(tags, at_least_one):
